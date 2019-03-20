@@ -51,7 +51,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
 }
 
 .c0:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
 .c0:enabled:focus:active {
@@ -543,7 +543,7 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "ButtonLink__StyledButtonLink-sc-14jv5cl-1",
             "isStatic": false,
-            "lastClassName": "fQEuZU",
+            "lastClassName": "gXZAoC",
             "rules": Array [
               "font-family:",
               [Function],
@@ -577,9 +577,9 @@ exports[`ButtonLink with Icon should match snapshot 1`] = `
               [Function],
               ";color:",
               [Function],
-              "!important;}&:enabled:focus{box-shadow:",
+              "!important;}&:enabled:focus{box-shadow:0 0 1px 1px ",
               [Function],
-              ";&:active{box-shadow:none;}}",
+              ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
             ],
           },
           "defaultProps": Object {
@@ -2080,7 +2080,7 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
 }
 
 .c0:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
 }
 
 .c0:enabled:focus:active {
@@ -2602,9 +2602,9 @@ exports[`ButtonLink with Icon should match snapshot 2`] = `
               [Function],
               ";color:",
               [Function],
-              "!important;}&:enabled:focus{box-shadow:",
+              "!important;}&:enabled:focus{box-shadow:0 0 1px 1px ",
               [Function],
-              ";&:active{box-shadow:none;}}",
+              ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
             ],
           },
           "defaultProps": Object {

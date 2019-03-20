@@ -235,7 +235,11 @@ exports[`Default Stack should match snapshot 1`] = `
 }
 
 .c8:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+}
+
+.c8:enabled:focus:active {
+  box-shadow: none;
 }
 
 .c8 .c10 {
@@ -13198,8 +13202,6 @@ exports[`Default Stack should match snapshot 1`] = `
                       [Function],
                       ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                       [Function],
-                      ";pointer-events:",
-                      [Function],
                       ";box-shadow:",
                       [Function],
                       ";&:hover{background:",
@@ -13224,11 +13226,9 @@ exports[`Default Stack should match snapshot 1`] = `
                       ".c11",
                       "{color:",
                       [Function],
-                      ";}}&:enabled:focus{box-shadow:",
+                      ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
                       [Function],
-                      " ",
-                      [Function],
-                      ";}",
+                      ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
                       ".c10",
                       "{width:",
                       [Function],
@@ -16255,7 +16255,11 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
 }
 
 .c8:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+}
+
+.c8:enabled:focus:active {
+  box-shadow: none;
 }
 
 .c8 .c10 {
@@ -29317,8 +29321,6 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         [Function],
                         ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                         [Function],
-                        ";pointer-events:",
-                        [Function],
                         ";box-shadow:",
                         [Function],
                         ";&:hover{background:",
@@ -29343,11 +29345,9 @@ exports[`Stack with enabled flex should match snapshot 1`] = `
                         ".c11",
                         "{color:",
                         [Function],
-                        ";}}&:enabled:focus{box-shadow:",
+                        ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
                         [Function],
-                        " ",
-                        [Function],
-                        ";}",
+                        ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
                         ".c10",
                         "{width:",
                         [Function],
@@ -32371,7 +32371,11 @@ exports[`Stack with flex prop should match snapshot 1`] = `
 }
 
 .c8:enabled:focus {
-  box-shadow: 0 0 4px 1px rgba(1,118,210,0.3);
+  box-shadow: 0 0 1px 1px #fff,0 0 1px 3px rgba(1,118,210,0.6);
+}
+
+.c8:enabled:focus:active {
+  box-shadow: none;
 }
 
 .c8 .c10 {
@@ -45330,8 +45334,6 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       [Function],
                       ";transition:all 0.15s ease-in-out !important;outline:0;opacity:",
                       [Function],
-                      ";pointer-events:",
-                      [Function],
                       ";box-shadow:",
                       [Function],
                       ";&:hover{background:",
@@ -45356,11 +45358,9 @@ exports[`Stack with flex prop should match snapshot 1`] = `
                       ".c11",
                       "{color:",
                       [Function],
-                      ";}}&:enabled:focus{box-shadow:",
+                      ";}}&:enabled:focus{box-shadow:0 0 1px 1px ",
                       [Function],
-                      " ",
-                      [Function],
-                      ";}",
+                      ",0 0 1px 3px rgba(1,118,210,0.6);&:active{box-shadow:none;}}",
                       ".c10",
                       "{width:",
                       [Function],
