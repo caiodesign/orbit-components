@@ -98,6 +98,8 @@ storiesOf("ButtonLink", module)
     const external = boolean("External", false);
     const transparent = boolean("Transparent", false);
     const submit = boolean("Submit", false);
+    const ariaExpanded = boolean("Aria expanded", false);
+    const ariaControls = text("Aria controls", "element ID");
 
     return {
       info:
@@ -121,6 +123,8 @@ storiesOf("ButtonLink", module)
                   onClick={action("clicked")}
                   transparent={transparent}
                   submit={submit}
+                  ariaExpanded={ariaExpanded}
+                  ariaControls={ariaControls}
                 >
                   {title}
                 </ButtonLink>

@@ -189,7 +189,7 @@ export const StyledButtonLink = styled(
   padding: ${buttonSpacing()};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
   font-size: ${getSizeToken(TOKENS.fontSizeButton)};
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: ${({ disabled, theme }) => (disabled ? theme.orbit.opacityButtonDisabled : "1")};
   transition: all 0.15s ease-in-out !important;
   outline: 0;
@@ -231,6 +231,8 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
     iconRight,
     type = TYPES.PRIMARY,
     onClick,
+    ariaExpanded,
+    ariaControls,
   } = props;
 
   const iconLeft = props.iconLeft || icon;
@@ -250,6 +252,8 @@ const ButtonLink = React.forwardRef((props: Props, ref: Ref) => {
       rel={href && external ? "noopener noreferrer" : undefined}
       iconLeft={iconLeft}
       buttonRef={ref}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
     >
       {iconLeft && (
         <IconContainer size={size} type={type} onlyIcon={onlyIcon} sizeIcon={sizeIcon}>
