@@ -11,7 +11,7 @@ import defaultTokens from "../defaultTokens";
 
 import type { Props, State, ForwardedRef } from "./index";
 
-const PrefixSuffix = styled(({ type, ...props }) => <div {...props} />)`
+const PrefixSuffix = styled(({ type, ...props }) => <div role="button" tabIndex="0" {...props} />)`
   flex-shrink: 0;
   z-index: 3;
   cursor: ${({ disabled }) => disabled && "not-allowed"};
@@ -139,11 +139,9 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
               iconLeft={<MinusCircle color="secondary" />}
               size={size}
               onClick={this.decrementCounter}
-              onKeyDown={this.incrementCounter}
+              onKeyDown={this.decrementCounter}
               transparent
               component={PrefixSuffix}
-              role="button"
-              tabindex="0"
             />
           }
           suffix={
@@ -155,8 +153,6 @@ class InputStepper extends React.Component<Props & ForwardedRef, State> {
               onKeyDown={this.incrementCounter}
               transparent
               component={PrefixSuffix}
-              role="button"
-              tabindex="0"
             />
           }
         />
