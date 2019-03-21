@@ -448,7 +448,7 @@ class Tooltip extends React.PureComponent<Props, State> {
           {children}
         </StyledTooltipChildren>
         <Portal element="tooltips">
-          <StyledTooltip role="tooltip" data-test={dataTest}>
+          <StyledTooltip data-test={dataTest}>
             <StyledTooltipOverlay
               onClick={this.handleClose}
               onFocus={this.handleOpen}
