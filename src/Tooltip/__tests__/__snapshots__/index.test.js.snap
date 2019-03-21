@@ -15,9 +15,7 @@ exports[`Tooltip it should match snapshot 1`] = `
   <Portal
     element="tooltips"
   >
-    <Tooltip__StyledTooltip
-      role="tooltip"
-    >
+    <Tooltip__StyledTooltip>
       <Tooltip__StyledTooltipOverlay
         onClick={[Function]}
         onFocus={[Function]}
