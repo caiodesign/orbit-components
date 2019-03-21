@@ -8,6 +8,7 @@ exports[`Tooltip it should match snapshot 1`] = `
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    tabIndex="0"
   >
     <Airplane />
   </Tooltip__StyledTooltipChildren>
@@ -19,6 +20,7 @@ exports[`Tooltip it should match snapshot 1`] = `
     >
       <Tooltip__StyledTooltipOverlay
         onClick={[Function]}
+        onFocus={[Function]}
         shownMobile={false}
         theme={
           Object {
@@ -468,6 +470,7 @@ exports[`Tooltip it should match snapshot 1`] = `
       />
       <Tooltip__StyledTooltipWrapper
         align="center"
+        aria-hidden={true}
         containerHeight={0}
         containerLeft={0}
         containerTop={0}
@@ -477,6 +480,7 @@ exports[`Tooltip it should match snapshot 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         position="right"
+        role="tooltip"
         shown={false}
         shownMobile={false}
         size="small"
