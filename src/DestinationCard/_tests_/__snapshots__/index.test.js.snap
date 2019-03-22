@@ -17,6 +17,9 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
       ],
     }
   }
+  onKeyDown={[Function]}
+  role="link"
+  tabIndex="0"
   theme={
     Object {
       "orbit": Object {
@@ -3626,10 +3629,13 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
         }
       >
         <Heading
+          element="h2"
           inverted={true}
           type="title1"
         >
-          Dubai
+          <span>
+            Dubai
+          </span>
         </Heading>
       </DestinationCard__StyledDestination>
       <DestinationCard__Shown
