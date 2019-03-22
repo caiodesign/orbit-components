@@ -17,11 +17,6 @@ import { left, right, rtlSpacing } from "../utils/rtl";
 
 import type { Props, State, ExpandedType } from "./index";
 
-export const StyledTripSegment = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
 export const StyledTripSegmentMilestone = styled.div`
   display: flex;
   height: 50px;
@@ -125,22 +120,6 @@ const StyledTripSegmentOverview = styled.div`
   ${StyledText} {
     line-height: 1.2;
   }
-  &:hover {
-    ${StyledTripSegmentContent} {
-      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalHover};
-    }
-    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
-      svg {
-        color: ${({ theme }) => theme.orbit.colorIconPrimary};
-      }
-    }
-    ${StyledTripSegmentMilestoneArrow} {
-      &:before {
-        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalHover} transparent
-          transparent;
-      }
-    }
-  }
 `;
 
 StyledTripSegmentOverview.defaultProps = {
@@ -210,6 +189,52 @@ StyledTripSegmentChildren.defaultProps = {
   theme: defaultTokens,
 };
 
+export const StyledTripSegment = styled.div`
+  display: flex;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+
+    ${StyledTripSegmentContent} {
+      border-color: ${({ theme }) => theme.orbit.borderColorInputFocus};
+    }
+
+    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
+      svg {
+        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+      }
+    }
+    ${StyledTripSegmentMilestoneArrow} {
+      &:before {
+        border-color: transparent ${({ theme }) => theme.orbit.borderColorInputFocus} transparent
+          transparent;
+      }
+    }
+  }
+
+  &:hover {
+    ${StyledTripSegmentContent} {
+      border-color: ${({ theme }) => theme.orbit.paletteCloudNormalHover};
+    }
+    ${StyledTripSegmentMilestone}, ${StyledChevrons} {
+      svg {
+        color: ${({ theme }) => theme.orbit.colorIconPrimary};
+      }
+    }
+    ${StyledTripSegmentMilestoneArrow} {
+      &:before {
+        border-color: transparent ${({ theme }) => theme.orbit.paletteCloudNormalHover} transparent
+          transparent;
+      }
+    }
+  }
+`;
+
+StyledTripSegment.defaultProps = {
+  theme: defaultTokens,
+};
+
 const MilestoneIcon = ({ type }) => {
   switch (type) {
     case "airline":
@@ -267,6 +292,12 @@ class TripSegment extends React.PureComponent<Props, State> {
     }
   };
 
+  handleOnKeyDown = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    if (ev.keyCode === 13) {
+      this.handleToggle();
+    }
+  };
+
   node: { current: any | HTMLDivElement } = React.createRef();
   timeout: TimeoutID;
 
@@ -284,7 +315,13 @@ class TripSegment extends React.PureComponent<Props, State> {
     const { expanded, initialExpanded, contentHeight } = this.state;
 
     return (
-      <StyledTripSegment dataTest={dataTest}>
+      <StyledTripSegment
+        dataTest={dataTest}
+        tabIndex="0"
+        role="button"
+        aria-expanded={expanded}
+        onKeyDown={this.handleOnKeyDown}
+      >
         <StyledTripSegmentMilestone onClick={this.handleToggle}>
           <MilestoneIcon type={carrier.type || CARRIER_TYPE_OPTIONS.AIRLINE} />
           <StyledTripSegmentMilestoneArrow />
@@ -321,6 +358,7 @@ class TripSegment extends React.PureComponent<Props, State> {
             expanded={expanded}
             contentHeight={contentHeight}
             initialExpanded={initialExpanded}
+            aria-hidden={expanded}
           >
             <div ref={this.node}>{children}</div>
           </StyledTripSegmentChildren>
