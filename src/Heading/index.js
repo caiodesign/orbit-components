@@ -60,6 +60,7 @@ const Heading = ({
   dataTest,
   inverted = false,
   spaceAfter,
+  id,
 }: Props) => (
   <StyledHeading
     type={type}
@@ -67,6 +68,7 @@ const Heading = ({
     inverted={inverted}
     dataTest={dataTest}
     spaceAfter={spaceAfter}
+    id={id}
   >
     {children}
   </StyledHeading>

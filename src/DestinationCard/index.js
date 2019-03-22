@@ -137,6 +137,9 @@ const StyledDestinationCard = styled(({ height, imageURL, theme, ...props }) => 
 
   &:hover,
   &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px ${({ theme }) => theme.orbit.colorTextButtonWhiteBordered},
+      0 0 1px 3px rgba(1, 118, 210, 0.6); // TODO: Create token
     ${StyledOverlay} {
       opacity: 0;
     }
@@ -251,8 +254,8 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" element="h2" inverted>
-                <span id={this.cardID}>{destinationCity}</span>
+              <Heading type="title1" element="div" inverted id={this.cardID}>
+                {destinationCity}
               </Heading>
             </StyledDestination>
             <Shown>
