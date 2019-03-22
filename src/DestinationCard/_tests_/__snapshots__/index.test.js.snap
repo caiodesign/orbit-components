@@ -3629,13 +3629,11 @@ exports[`DestinationCard one-way should match snapshot 1`] = `
         }
       >
         <Heading
-          element="h2"
+          element="div"
           inverted={true}
           type="title1"
         >
-          <span>
-            Dubai
-          </span>
+          Dubai
         </Heading>
       </DestinationCard__StyledDestination>
       <DestinationCard__Shown
