@@ -4,6 +4,7 @@ import * as React from "react";
 import { storiesOf, setAddon } from "@storybook/react";
 import chaptersAddon from "react-storybook-addon-chapters";
 import { withKnobs, text, object, number } from "@storybook/addon-knobs/react";
+import { action } from "@storybook/addon-actions";
 import styles from "@sambego/storybook-styles/dist/index";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
@@ -120,6 +121,7 @@ storiesOf("DestinationCard", module)
                   timeOfStay={timeOfStay}
                   outbound={outbound}
                   inbound={inbound}
+                  onClick={action("clicked")}
                 />
               ),
             },

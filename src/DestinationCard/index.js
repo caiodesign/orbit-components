@@ -191,6 +191,12 @@ class DestinationCard extends React.PureComponent<Props, State> {
     }
   };
 
+  handleKeyDown = (ev: SyntheticKeyboardEvent<HTMLElement>) => {
+    if (ev.keyCode === 13 && this.props.onClick !== undefined) {
+      this.props.onClick();
+    }
+  };
+
   hiddenContent: { current: any | HTMLDivElement } = React.createRef();
   cardID: string;
 
@@ -215,9 +221,10 @@ class DestinationCard extends React.PureComponent<Props, State> {
       <StyledDestinationCard
         data-test={dataTest}
         onClick={onClick}
+        onKeyDown={this.handleKeyDown}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
         tabIndex="0"
-        role="button"
+        role="link"
         aria-labelledby={this.cardID}
       >
         <LazyImage
