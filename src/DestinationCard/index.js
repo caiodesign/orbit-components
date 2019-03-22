@@ -10,6 +10,7 @@ import FlightDirectIcon from "../icons/FlightDirect";
 import { BASE_URL, SMALLEST_HEIGHT } from "./consts";
 import LazyImage from "../LazyImage";
 import Text from "../Text";
+import randomID from "../utils/randomId";
 
 import type { Props, State } from "./index";
 
@@ -171,6 +172,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     this.setHeight();
+    this.cardID = randomID("DestinationCard");
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -190,6 +192,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
   };
 
   hiddenContent: { current: any | HTMLDivElement } = React.createRef();
+  cardID: string;
 
   render() {
     const {
@@ -213,6 +216,9 @@ class DestinationCard extends React.PureComponent<Props, State> {
         data-test={dataTest}
         onClick={onClick}
         height={height >= SMALLEST_HEIGHT ? height : SMALLEST_HEIGHT}
+        tabIndex="0"
+        role="button"
+        aria-labelledby={this.cardID}
       >
         <LazyImage
           original={{
@@ -238,8 +244,8 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" inverted>
-                {destinationCity}
+              <Heading type="title1" element="h2" inverted>
+                <span id={this.cardID}>{destinationCity}</span>
               </Heading>
             </StyledDestination>
             <Shown>
