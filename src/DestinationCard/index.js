@@ -244,7 +244,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
         <StyledOverlay />
         <StyledOverlayHover />
         <StyledDestinationCardContent hiddenContentHeight={hiddenContentHeight}>
-          <StyledDestinationCardHeader>
+          <StyledDestinationCardHeader id={this.cardID}>
             <Shown>
               <Stack flex align="center" justify="start" spacing="extraTight">
                 <Heading type="title3" element="div" inverted>
@@ -254,7 +254,7 @@ class DestinationCard extends React.PureComponent<Props, State> {
               </Stack>
             </Shown>
             <StyledDestination>
-              <Heading type="title1" element="div" inverted id={this.cardID}>
+              <Heading type="title1" element="div" inverted>
                 {destinationCity}
               </Heading>
             </StyledDestination>

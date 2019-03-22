@@ -18,7 +18,6 @@ Table below contains all types of the props available in Heading component.
 | inverted      | `boolean`             |            | The `true`, the Heading color will be white.
 | spaceAfter    | `enum`                |            | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit-components/tree/master/src/common/getSpacingToken)
 | **type**      | [`enum`](#enum)       | `"title1"` | The size type of Heading.
-| id            | `string`              |            | `id` attribute, should be unique across document.
 
 ### enum
 
