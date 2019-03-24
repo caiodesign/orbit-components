@@ -62,6 +62,7 @@ storiesOf("Tile", module)
                   description={description}
                 >
                   This is example of expanded content
+                  <div style={{ backgroundColor: "black", height: "200px" }}>amendobobo</div>
                 </Tile>
               ),
             },
