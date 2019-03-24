@@ -14,7 +14,7 @@ const StyledTileExpandable = styled.div`
   padding: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium} 0`};
   margin: 0 ${({ theme }) => theme.orbit.spaceMedium};
   max-height: ${({ contentHeight, expanded, initialExpanded }) =>
-    !initialExpanded && (expanded ? `${contentHeight}px` : "0")};
+    !initialExpanded && (expanded ? `100%` : "0")};
   ${({ initialExpanded, theme }) =>
     !initialExpanded &&
     css`
