@@ -14,7 +14,7 @@ const StyledTileExpandable = styled.div`
   padding: ${({ theme, expanded }) => expanded && `${theme.orbit.spaceMedium} 0`};
   margin: 0 ${({ theme }) => theme.orbit.spaceMedium};
   max-height: ${({ contentHeight, expanded, initialExpanded }) =>
-    !initialExpanded && (expanded ? `100%` : "0")};
+    !initialExpanded && (expanded ? `${contentHeight}px` : "0")};
   ${({ initialExpanded, theme }) =>
     !initialExpanded &&
     css`
@@ -60,7 +60,9 @@ class TileExpandable extends React.PureComponent<Props, State> {
   }
 
   setHeight = () => {
-    const contentHeight = this.node?.current.clientHeight;
+    const contentHeight =
+      this.node?.current.children.clientHeight || this.node?.current.clientHeight;
+
     this.setState({ contentHeight });
   };
 
