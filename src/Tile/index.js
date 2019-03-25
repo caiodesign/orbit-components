@@ -49,6 +49,13 @@ class Tile extends React.PureComponent<Props, State> {
     this.setExpanded({ expanded, initialExpanded: expanded });
   }
 
+  componentDidUpdate(prevProps) {
+    const { expanded } = this.props;
+    if (prevProps.expanded !== expanded) {
+      this.setState({ expanded });
+    }
+  }
+
   setExpanded = ({ expanded, initialExpanded }: State) => {
     this.setState({ expanded, initialExpanded });
   };
@@ -72,6 +79,7 @@ class Tile extends React.PureComponent<Props, State> {
     const { href, external, icon, title, description, children, dataTest } = this.props;
     const isExpandable = this.isExpandable();
     const isExpanded = this.state.expanded;
+
     return (
       <StyledTile
         target={!isExpandable && external ? "_blank" : undefined}
