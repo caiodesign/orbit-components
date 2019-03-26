@@ -345,8 +345,8 @@ export const StyledButton = styled(
       ? getTypeToken(TOKENS.colorTextButtonBordered)
       : getTypeToken(TOKENS.colorTextButton)} !important;
   border: 0;
-  border-radius: ${({ theme, circled }) =>
-    circled ? getSizeToken(TOKENS.heightButton) : theme.orbit.borderRadiusNormal};
+  border-radius: ${({ theme, circled, noRadius }) =>
+    circled ? getSizeToken(TOKENS.heightButton) : noRadius || theme.orbit.borderRadiusNormal};
   padding: ${buttonSpacing()};
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   font-weight: ${({ theme }) => theme.orbit.fontWeightBold}!important;
